@@ -19,10 +19,12 @@ from django.contrib import admin
 from django.urls import path, include
 from core.urls import urlpatterns
 from core.views import error_404_handler
+from shop.urls import urlpatterns
 
 handler404 = 'core.views.error_404_handler'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('core.urls'))
+    path('',include('core.urls')),
+    path('shop/',include('shop.urls'))
 ]
