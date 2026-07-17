@@ -8,3 +8,6 @@ def index(request):
 
 def about(request):
     return render(request,template_name='core/aboutus.html')
+
+def services(request):
+    return render(request,template_name='core/services.html')
