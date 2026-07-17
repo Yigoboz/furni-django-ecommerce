@@ -14,3 +14,6 @@ def services(request):
 
 def contact(request):
     return render(request,template_name='core/contact.html')
+
+def error_404_handler(request,exception):
+    return render(request,template_name='404.html',status=404)
