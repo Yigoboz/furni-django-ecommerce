@@ -28,7 +28,8 @@ class Product(models.Model):
     # Product Information
     title = models.CharField(max_length=100,verbose_name="Ürün Adı")
     description = models.TextField(verbose_name="Ürün Açıklaması")
-    slug = models.SlugField(max_length=50,unique=True,blank=True,verbose_name=True)
+    image = models.ImageField(upload_to='products/',blank=True,null=True,verbose_name="Ürün Resmi")
+    slug = models.SlugField(max_length=50,unique=True,blank=True,verbose_name="Slug")
 
     # Price Information
     price = models.DecimalField(max_digits=10,decimal_places=2,verbose_name="Ürün Fiyatı")
