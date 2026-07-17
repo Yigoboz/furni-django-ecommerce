@@ -18,8 +18,9 @@ from django.conf.urls import handler404
 from django.contrib import admin
 from django.urls import path, include
 from core.urls import urlpatterns
+from core.views import error_404_handler
 
-handler404 = 'core.views.error_404_view'
+handler404 = 'core.views.error_404_handler'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
