@@ -20,6 +20,8 @@ from django.urls import path, include
 from core.urls import urlpatterns
 from core.views import error_404_handler
 from shop.urls import urlpatterns
+from django.conf import settings
+from django.conf.urls.static import static
 
 handler404 = 'core.views.error_404_handler'
 
@@ -28,3 +30,6 @@ urlpatterns = [
     path('',include('core.urls')),
     path('shop/',include('shop.urls'))
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
